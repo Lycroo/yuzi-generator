@@ -9,6 +9,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 
+/**
+ * 静态文件生成
+ */
 public class StaticGenerator {
     public static void main(String[] args) {
         //获取根路径
@@ -38,11 +41,8 @@ public class StaticGenerator {
     public static void copyFilesByRecursive(File inputFile,File outPutFile) throws IOException {
         //判断是否是目录
         if (inputFile.isDirectory()){
-          //  System.out.println(inputFile.getName());
             File destOutPutFile = new File(outPutFile, inputFile.getName());
-            System.out.println(outPutFile);
-            System.out.println("-------------------");
-            System.out.println(destOutPutFile);
+            System.out.println("这个目录是"+destOutPutFile);
 
             if (!destOutPutFile.exists()){
                 destOutPutFile.mkdirs();
